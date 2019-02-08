@@ -19,11 +19,9 @@ function convertJsonToGraphqlMutation(articles) {
     // const citedBy = []; use later 
     articles.forEach(e => {
         const entryTags = e.entryTags;
-
         if(entryTags) {
             const cites = e.entryTags["Cited-References"];
             const splitCitations = cites.split(",");
-
             // 1. get the cited article authorName as the word before the first ','
             // 2. go through all articles to find the article with an .entryTags.Author === authorName
             console.log("splitCitations: ", splitCitations);
